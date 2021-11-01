@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto; 
+}
+.item-pizza {
+    width:33.33px;
+}
+
+.nav-mobile nav ul{
+    list-style: none;
+}

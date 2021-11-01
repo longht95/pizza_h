@@ -1,0 +1,22 @@
+.card-block {
+    display: flex;
+    
+}
+.mat-card {
+    padding: 0;
+}
+.image-pizza {
+    width:80%;
+    margin: 0 auto;
+}
+.card-image {
+    width:100%;
+    max-width:100%;
+}
+.mat-raised-button {
+    border-radius: 100vh;
+    margin-bottom: 0.5rem;
+}
+.mat-button-base {
+    border:1px solid #3f51b5;
+}

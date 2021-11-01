@@ -1,0 +1,6 @@
+.mat-tab-body-content {
+    overflow: hidden;
+}
+.mat-tab-body-active {
+    overflow: hidden !important;
+}
