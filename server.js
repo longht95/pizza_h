@@ -13,10 +13,10 @@ const forceSSL = function () {
     next();
   }
 };
-app.use(express.static('./dist/pizza-zzzzzz'));
+app.use(express.static('./dist/hermanos-bistro'));
  
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname,'/dist/pizza-zzzzzz/index.html'));
+  res.sendFile(path.join(__dirname,'/dist/hermanos-bistro/index.html'));
 });
  
 app.use(forceSSL());
