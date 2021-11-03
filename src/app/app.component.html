@@ -10,13 +10,19 @@
       <a href="#" mat-button>Burger</a>
       <a href="#" mat-button>Drinks</a>
     </div>
-    <div fxFlexFill fxLayoutAlign="end center" fxShow="true" fxHide.gt-xs="true">
-      <span>Menu</span>
-      
+    <div fxFlexFill fxLayoutAlign="space-between center" fxShow="true" fxHide.gt-xs="true">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
+        <span>Menu</span>
       </button>
-
+      <a routerLink="/" routerLinkActive="active">
+        <img src="assets/LOGOHPNG2.png" style="width:120px;">
+      </a>
+      
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      
     </div>
   </mat-toolbar>
   <mat-sidenav-container fxFlexFill class="example-container">
@@ -32,7 +38,7 @@
         <a href="#" mat-button>Drinks</a>
       </div>
     </mat-sidenav>
-    <mat-sidenav-content style="width:100%;max-width:1280px;margin-left:auto;margin-right:auto;margin-top:1rem;" @items>
+    <mat-sidenav-content class="container-content" @items>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

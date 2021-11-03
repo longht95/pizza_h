@@ -1,43 +1,69 @@
-<div fxLayout="row">
-  <div style="padding:2rem">
-    <img src="https://storage.googleapis.com/delivery-system-v2/02-06-2021%20Image/10010012.png" alt="Photo of a Shiba Inu">
+<div fxLayout="row" fxLayout.xs="column">
+  <div class="image-item-detail">
+    <img style="width:100%;" src="https://storage.googleapis.com/delivery-system-v2/02-06-2021%20Image/10010012.png" alt="Photo of a Shiba Inu">
   </div>
-    <div fxLayout="column" style="padding:0 2rem 2rem 2rem;">
-    Home > Pizza > Pizza Tom
+    <div fxLayout="column" class="container-details-item">
     <h1>
-      Sò điệp Hokkaido Gratin với xốt Miso ngọt Pizza
+      Bạch Tuộc kiểu Gracia từ Tây Ban Nha Pizza
     </h1>
     <h3>
-      Xốt Béchamel, súp lơ baby
+      Bạch tuộc mềm, xốt ớt bột, các loại hạt, nụ bạch hoa và xốt ngò, nụ bạch hoa và xốt ngò
     </h3>
-      <p>Do you want to make HALF & HALF</p>
-      <mat-slide-toggle></mat-slide-toggle>
+      <p>Do you want to make HALF & HALF ?</p>
+      <mat-slide-toggle color="primary"></mat-slide-toggle>
       <mat-tab-group dynamicHeight mat-align-tabs="start">
         <mat-tab label="Cheese">
+          <section fxLayout="column">
+            <mat-checkbox color="primary" fxLayout="row">
+              <span>Phô mai burrata nhà làm (75g)</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox color="primary" fxLayout="row">
+              <span>Red cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox color="primary" fxLayout="row">
+              <span>Shit cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox color="primary" fxLayout="row">
+              <span>Shit cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox color="primary" fxLayout="row">
+              <span>Shit cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+          </section>
+        </mat-tab>
+        <mat-tab label="Others">
           <section fxLayout="column">
             <mat-checkbox fxLayout="row">
               <span>Blue cheese</span>
               <span>50,000 vnd</span>
             </mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-            <mat-checkbox>Blue cheese</mat-checkbox>
-          </section>          
-        </mat-tab>
-        <mat-tab label="Others">
-          <mat-checkbox>Blue cheese</mat-checkbox>
-          <mat-checkbox>Shit cheese</mat-checkbox>
-          <mat-checkbox>Red cheese</mat-checkbox>
+            <mat-checkbox fxLayout="row">
+              <span>Red cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox fxLayout="row">
+              <span>Blue cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox fxLayout="row">
+              <span>Blue cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+            <mat-checkbox fxLayout="row">
+              <span>Blue cheese</span>
+              <span>50,000 vnd</span>
+            </mat-checkbox>
+          </section>   
         </mat-tab>
       </mat-tab-group>
+      <button style="margin-top:1rem;" mat-raised-button color="primary" class="mat-elevation-z button-select-card">
+        <span>100,000 vnd</span>
+        <span>Select</span>
+      </button>
   </div>
 </div>

@@ -8,3 +8,14 @@
 .nav-mobile nav ul{
     list-style: none;
 }
+.container-content {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1rem;
+}
+@media only screen and (max-width: 600px) {
+    .container-content {
+        width:100%;
+    }
+}
