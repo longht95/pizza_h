@@ -1,0 +1,31 @@
+::ng-deep .mat-dialog-container {
+    padding:1rem !important;
+    max-width: 400px;
+}
+
+
+::ng-deep .cdk-global-overlay-wrapper {
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    margin-top:64px;
+}
+
+/* ::ng-deep .cdk-overlay-pane {
+    width:100% !important;
+    max-width: 100% !important;
+} */
+
+@media only screen and (max-width: 600px) {
+    ::ng-deep .mat-dialog-container {
+        max-width: 100%;
+    }
+    ::ng-deep .cdk-global-overlay-wrapper {
+        justify-content: flex-start !important;
+        align-items: flex-end !important;
+        margin-top:0;
+    }
+    ::ng-deep .cdk-overlay-pane {
+        width:100% !important;
+        max-width: 100% !important;
+    }
+}

@@ -1,0 +1,44 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" class="container-order">
+  <div fxLayout="column" fxFlex="45%">
+    <h1>BILLING DETAILS</h1>
+    <form>
+      <div class="form-field-style">
+        <mat-label>Name</mat-label>
+        <input class="input-style" matInput [formControl]="email" required>
+      </div>
+      <div class="form-field-style">
+        <mat-label>Phone</mat-label>
+        <input class="input-style" type="tel" matInput>
+      </div>
+      <div class="form-field-style">
+        <mat-label>Street address</mat-label>
+        <input class="input-style" matInput placeholder="House number and street name" [formControl]="address" required>
+      </div>
+      <div class="form-field-style">
+        <mat-label>Order notes</mat-label>
+        <textarea class="input-style" style="height:80px" matText placeholder="Notes about your order"></textarea>
+      </div>
+  </form>
+</div>
+  <div fxFlex="45%">
+    <h1>YOUR ORDER</h1>
+    <div fxLayout="row" flex="1 1 1" *ngFor="let item of listItem; index as i">
+      <div style="flex:0 0 8em;">
+        <img style="width:100%;" [src]="item.srcImg">
+     </div>
+      <div style="flex:1;padding:0 1em;">
+        <p style="font-weight: 500;">{{item.name}}</p>
+        <p style="font-weight: 500;" *ngIf="item.itemHalf">(H) {{item.itemHalf.name}}</p>
+        <p *ngFor="let topping of item.toppings">- {{topping.name}}</p>
+        <p style="font-weight: 500;margin-bottom: 1em;">{{item.priceTotal || item.price | number}}</p>
+      </div>
+      <div style="flex:0 0 1em;">
+        <mat-icon style="cursor: pointer;" (click)="removeItem(item)">close</mat-icon>
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" style="margin:1rem 0;" class="mat-elevation-z" fxFlex="100%" (click)="submitOrder()">Order</button>
+    </div>
+  </div>
+</div>
+  

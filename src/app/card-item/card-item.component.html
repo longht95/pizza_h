@@ -1,17 +1,16 @@
-<mat-card fxLayout="row" fxLayout.gt-xs="column" routerLink="/pizza/1" routerLinkActive="active" class="mat-elevation-z">
-  <div fxFlex.xs="1.7 1 0%" class="image-pizza">
-    <img class="card-image" src="https://storage.googleapis.com/delivery-system-v2/02-06-2021%20Image/10010012.png">
-    <h3 style="text-align: center;color:#3f51b5">230,000 vnd</h3>
+<mat-card fxLayout="row" fxLayout.gt-xs="column" class="mat-elevation-z">
+  <div fxFlex.xs="1.6 1 0%" class="image-pizza">
+    <img class="card-image" [src]="itemPizza?.srcImg">
+    <h3 style="text-align: center;color:#3f51b5">{{itemPizza.price | number}} vnd</h3>
   </div>  
-  
-    <div fxFlex.xs="2.3 1 0%" style="padding-left: 1rem;">
+    <div fxFlex.xs="2.4 1 0%" style="padding-left: 1rem;">
     <mat-card-content>
-      <p style="font-weight: 500;">Bạch Tuộc kiểu Gracia từ Tây Ban Nha Pizza</p>
-      <p style="line-clamp:2;">Bạch tuộc mềm, xốt ớt bột, các loại hạt, nụ bạch hoa và xốt ngò, nụ bạch hoa và xốt ngò</p>
+      <p class="line-text" style="font-weight: 500;">{{itemPizza.name}}</p>
+      <p class="line-text">{{itemPizza.description}}</p>
     </mat-card-content>
     <div fxLayout.xs="column" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutAlign.xs="none" >
-      <button mat-raised-button class="mat-elevation-z" fxFlex="45%" fxFlex.xs="auto">Add to cart</button>
-      <button mat-raised-button color="primary" class="mat-elevation-z" fxFlex="45%" fxFlex.xs="auto">Select</button>
+      <button *ngIf="!isHalf" mat-raised-button class="mat-elevation-z" fxFlex="45%" fxFlex.xs="auto" (click)="addToCart()">Add to cart</button>
+      <button *ngIf="!isExist" mat-raised-button color="primary" class="mat-elevation-z" fxFlex="45%" (click)="selectHalf()" fxFlex.xs="auto">Select</button>
     </div>
    </div>
   </mat-card>

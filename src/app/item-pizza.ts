@@ -1,7 +1,13 @@
+import { Topping } from "./topping";
+
+
 export class ItemPizza {
-    id:number | undefined;
-    name: string | undefined;
-    price: number | undefined;
-    srcImg: string | undefined;
-    description: string | undefined;
+    id?:number;
+    name?: string;
+    price?: number;
+    srcImg?: string;
+    description?: string;
+    toppings!: Topping[];
+    itemHalf!: ItemPizza;
+    priceTotal?: number;
 }

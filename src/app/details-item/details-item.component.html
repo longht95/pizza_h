@@ -1,69 +1,38 @@
-<div fxLayout="row" fxLayout.xs="column">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
   <div class="image-item-detail">
-    <img style="width:100%;" src="https://storage.googleapis.com/delivery-system-v2/02-06-2021%20Image/10010012.png" alt="Photo of a Shiba Inu">
+    <img style="width:100%;" [src]="itemPizza?.srcImg">
   </div>
     <div fxLayout="column" class="container-details-item">
-    <h1>
-      Bạch Tuộc kiểu Gracia từ Tây Ban Nha Pizza
-    </h1>
-    <h3>
-      Bạch tuộc mềm, xốt ớt bột, các loại hạt, nụ bạch hoa và xốt ngò, nụ bạch hoa và xốt ngò
-    </h3>
+    <h1>{{itemPizza?.name}}</h1>
+    <h3>{{itemPizza?.description}}</h3>
+    <div>
       <p>Do you want to make HALF & HALF ?</p>
-      <mat-slide-toggle color="primary"></mat-slide-toggle>
+      <mat-slide-toggle color="primary" [checked]="isHalf" (change)="halfPizza($event.source.checked)"></mat-slide-toggle>
+    </div>
+      
       <mat-tab-group dynamicHeight mat-align-tabs="start">
         <mat-tab label="Cheese">
-          <section fxLayout="column">
-            <mat-checkbox color="primary" fxLayout="row">
-              <span>Phô mai burrata nhà làm (75g)</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox color="primary" fxLayout="row">
-              <span>Red cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox color="primary" fxLayout="row">
-              <span>Shit cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox color="primary" fxLayout="row">
-              <span>Shit cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox color="primary" fxLayout="row">
-              <span>Shit cheese</span>
-              <span>50,000 vnd</span>
+          <section fxLayout="column" *ngFor="let topping of toppingsCheese">
+            <mat-checkbox color="primary" fxLayout="row" [checked]="initChecked(topping)" (change)="checkedTopping($event.checked, topping)">
+              <span>{{topping.name}}</span>
+              <span>{{topping.price | number}} vnd</span>
             </mat-checkbox>
           </section>
         </mat-tab>
         <mat-tab label="Others">
-          <section fxLayout="column">
-            <mat-checkbox fxLayout="row">
-              <span>Blue cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox fxLayout="row">
-              <span>Red cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox fxLayout="row">
-              <span>Blue cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox fxLayout="row">
-              <span>Blue cheese</span>
-              <span>50,000 vnd</span>
-            </mat-checkbox>
-            <mat-checkbox fxLayout="row">
-              <span>Blue cheese</span>
-              <span>50,000 vnd</span>
+          <section fxLayout="column" *ngFor="let topping of toppingsOther">
+            <mat-checkbox color="primary" fxLayout="row" [checked]="initChecked(topping)" (change)="checkedTopping($event.checked, topping)">
+              <span>{{topping.name}}</span>
+              <span>{{topping.price | number}} vnd</span>
             </mat-checkbox>
           </section>   
         </mat-tab>
       </mat-tab-group>
-      <button style="margin-top:1rem;" mat-raised-button color="primary" class="mat-elevation-z button-select-card">
-        <span>100,000 vnd</span>
-        <span>Select</span>
+      <button (click)="addItem()" style="margin-top:1rem;" mat-raised-button color="primary" class="mat-elevation-z button-select-card">
+        <span>{{price | number}}</span>
+        <span *ngIf="isHalf && !itemHalf">Select Half</span>
+        <span *ngIf="!isHalf || itemHalf">Add to card</span>
+        
       </button>
   </div>
 </div>

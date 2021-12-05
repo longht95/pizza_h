@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <div fxShow="true" fxFlexFill fxLayoutAlign="center center" fxHide.lt-sm="true">
+      <a href="#" mat-button routerLink="/order/pizza">Wood-fired Pizza</a>
+      <a href="#" mat-button routerLink="/order/pasta">Pasta</a>
+      <a href="#" mat-button routerLink="/order/tacos">Tacos</a>
+      <a href="#" mat-button routerLink="/order/nachos">Nachos</a>
+      <a href="#" mat-button routerLink="/order/grilled">Grilled & Fired</a>
+      <a href="#" mat-button routerLink="/order/salad">Salad</a>
+      <a href="#" mat-button routerLink="/order/burger">Burger</a>
+      <a href="#" mat-button routerLink="/order/drinks">Drinks</a>
+      <a href="#" mat-button routerLink="/order/beer">Craft Beer</a>
+    </div>
+    <div fxFlexFill fxLayoutAlign="space-between center" fxShow="true" fxHide.gt-xs="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+        <span>Menu</span>
+      </button>
+      <a routerLink="/" routerLinkActive="active">
+        <img src="assets/LOGOHPNG2.png" style="width:120px;">
+      </a>
+      
+      <button mat-icon-button (click)="navigationToCart()">
+        <mat-icon>shopping_cart</mat-icon>
+        <div class="number-cart">
+          <span>{{numberOfCart}}</span>
+        </div>
+      </button>
+      
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav #sidenav fxLayout="column" style="width:50vw;">
+      <div fxLayout="column">
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/pizza">Wood-fired Pizza</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/pasta">Pasta</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/tacos">Tacos</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/nachos">Nachos</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/grilled">Grilled & Fired</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/salad">Salad</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/burger">Burger</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/drinks">Drinks</a>
+        <a mat-button style="text-align: left;" href="#" routerLink="/order/beer">Craft Beer</a>
+        <ul style="margin: 0;">
+          <li><a href="#" mat-button>Craft 1</a></li>
+          <li><a href="#" mat-button>Craft 2</a></li>
+        </ul>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="container-content" @items>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

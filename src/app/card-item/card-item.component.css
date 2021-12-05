@@ -20,3 +20,18 @@
 .mat-button-base {
     border:1px solid #3f51b5;
 }
+.line-text {
+    line-height: 1.5em;
+    height:3em;
+    overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+    .line-text {
+        -webkit-line-clamp:2;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        height:auto;
+        line-height:unset;
+    }
+}
